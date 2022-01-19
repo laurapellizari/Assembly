@@ -1,0 +1,32 @@
+
+Freescale HC12-Assembler 
+(c) Copyright Freescale 1987-2015
+
+ Abs. Rel.   Loc    Obj. code   Source line
+ ---- ----   ------ ---------   -----------
+    1    1                      ;Endereçamento INERENTE (INH) – *[código fonte]*
+    2    2                      
+    3    3                              absentry        inicio
+    4    4          0000 4000   rom     equ      $4000  ;end.mem.ROM
+    5    5                      ;---
+    6    6                              org     rom             ;inic.área programa
+    7    7  a004000 87          inicio  clra            ;zerar A,A=0
+    8    8  a004001 42                  inca            ; a = 1
+    9    9  a004002 48                  asla            ; a = 2
+   10   10  a004003 48                  asla            ; a = 4
+   11   11  a004004 48                  asla            ; a = 8
+   12   12  a004005 42                  inca            ; a =9 
+   13   13  a004006 42                  inca            ; a = 10
+   14   14  a004007 42                  inca            ; a = 11
+   15   15  a004008 42                  inca            ; a = 12
+   16   16  a004009 C7                  clrb    
+   17   17  a00400A 52                  incb    
+   18   18  a00400B 52                  incb
+   19   19  a00400C 52                  incb
+   20   20  a00400D 58                  aslb
+   21   21  a00400E 58                  aslb
+   22   22  a00400F 58                  aslb
+   23   23  a004010 58                  aslb
+   24   24  a004011 58                  aslb
+   25   25                              
+   26   26  a004012 20FE        aki     bra     aki     ;"parar"programa

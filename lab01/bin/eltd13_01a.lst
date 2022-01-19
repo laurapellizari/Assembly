@@ -1,0 +1,24 @@
+
+Freescale HC12-Assembler 
+(c) Copyright Freescale 1987-2015
+
+ Abs. Rel.   Loc    Obj. code   Source line
+ ---- ----   ------ ---------   -----------
+    1    1                      ;eltd13_01a.asm
+    2    2                      ;1) Escreva um programa usando as diretivas ORG, DC e END. 
+    3    3                      ;A diretiva DC é apropriada para uso de caracteres. 
+    4    4                      ;Use-a para várias possibilidades de caracteres. Use mais
+    5    5                      ;de uma base númerica p/ ORG. 
+    6    6                      ;Assemblar o programa e analisar o arquivo *.LST
+    7    7                              org     $1000            ;base hexadecimal
+    8    8  a001000 656C 7464           dc.b    "eltd13"         ;base decimal
+             001004 3133       
+    9    9                              org     2000    
+   10   10  a0007D0 6D65 6E73   mes1    dc.b    "mensagem 1"
+             0007D4 6167 656D  
+             0007D8 2031       
+   11   11  a0007DA 7465 7374   mes2    dc.b    "teste 2"
+             0007DE 6520 32    
+   12   12                              org     $1100
+   13   13  a001100 7465 7374   mes3    dc.b    "teste 2"
+             001104 6520 32    

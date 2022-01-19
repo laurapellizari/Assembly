@@ -1,0 +1,23 @@
+
+Freescale HC12-Assembler 
+(c) Copyright Freescale 1987-2015
+
+ Abs. Rel.   Loc    Obj. code   Source line
+ ---- ----   ------ ---------   -----------
+    1    1                      ;Endereçamento IMEDIATO  – *[código fonte]*
+    2    2                      ;Programa escreve a partir de endereçamento imediato e inerente 47+27+85 guardados em B
+    3    3                              absentry        inicio
+    4    4          0000 4000   rom     equ      $4000  ;end.mem.ROM
+    5    5                      ;---
+    6    6                              org     rom             ;inic.área programa
+    7    7  a004000 0102        c1      dc.w    258
+    8    8  a004002 0101        c2      dc.w    257
+    9    9  a004004 0100        c3      dc.w    256
+   10   10                      
+   11   11  a004006 B640 00     inicio  ldaa    c1    ; a = 47
+   12   12  a004009 F640 02             ldab    c2    ; b = 27
+   13   13  a00400C 1806                aba           ; a = 47 +27
+   14   14  a00400E F640 04             ldab    c3    ; b= 85
+   15   15  a004011 1806                aba           ; a = 47 +27 +85
+   16   16                                   
+   17   17  a004013 20FE        aki     bra     aki   ;"parar"programa
